@@ -1,6 +1,6 @@
 <?php
 
-namespace OCA\TestApp\Tests\Integration\Controller;
+namespace OCA\Cookbook\Tests\Integration\Controller;
 
 use OCP\AppFramework\App;
 use Test\TestCase;
@@ -17,13 +17,13 @@ class AppTest extends TestCase {
 
     public function setUp() {
         parent::setUp();
-        $app = new App('testapp');
+        $app = new App('cookbook');
         $this->container = $app->getContainer();
     }
 
     public function testAppInstalled() {
         $appManager = $this->container->query('OCP\App\IAppManager');
-        $this->assertTrue($appManager->isInstalled('testapp'));
+        $this->assertTrue($appManager->isInstalled('cookbook'));
     }
 
 }

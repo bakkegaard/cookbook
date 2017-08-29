@@ -1,5 +1,4 @@
-# Test App
-[![Build Status](https://travis-ci.org/bakkegaard/cookbook.svg?branch=master)](https://travis-ci.org/bakkegaard/cookbook)
+# Cookbook
 Place this app in **nextcloud/apps/**
 
 ## Building the app

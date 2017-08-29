@@ -1,6 +1,6 @@
 <?php
-script('testapp', 'script');
-style('testapp', 'style');
+script('cookbook', 'script');
+style('cookbook', 'style');
 ?>
 
 <div id="app">

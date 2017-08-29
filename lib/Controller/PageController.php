@@ -1,5 +1,5 @@
 <?php
-namespace OCA\TestApp\Controller;
+namespace OCA\Cookbook\Controller;
 
 use OCP\IRequest;
 use OCP\AppFramework\Http\TemplateResponse;
@@ -25,7 +25,7 @@ class PageController extends Controller {
 	 * @NoCSRFRequired
 	 */
 	public function index() {
-		return new TemplateResponse('testapp', 'index');  // templates/index.php
+		return new TemplateResponse('cookbook', 'index');  // templates/index.php
 	}
 
 }
