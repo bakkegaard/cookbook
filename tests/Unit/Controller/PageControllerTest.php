@@ -1,6 +1,6 @@
 <?php
 
-namespace OCA\Cookbook\Tests\Unit\Controller;
+namespace OCA\TestApp\Tests\Unit\Controller;
 
 use PHPUnit_Framework_TestCase;
 
@@ -15,7 +15,7 @@ class PageControllerTest extends PHPUnit_Framework_TestCase {
 		$request = $this->getMockBuilder('OCP\IRequest')->getMock();
 
 		$this->controller = new PageController(
-			'cookbook', $request, $this->userId
+			'testapp', $request, $this->userId
 		);
 	}
 
