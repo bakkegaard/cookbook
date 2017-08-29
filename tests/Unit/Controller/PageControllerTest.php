@@ -2,7 +2,7 @@
 
 namespace OCA\Cookbook\Tests\Unit\Controller;
 
-use OCA\Cookbook\Controller\PageController
+use OCA\Cookbook\Controller\PageController;
 
 use PHPUnit_Framework_TestCase;
 
