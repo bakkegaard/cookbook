@@ -1,23 +1,24 @@
-sudo: false
+sudo: required
 dist: trusty
 language: php
 php:
-    - 7.1
+    - 5.6
+    - 7
 env:
     global:
         - CORE_BRANCH=stable12
+    matrix:
+        - DB=pgsql
 
 matrix:
     allow_failures:
         - env: DB=pgsql CORE_BRANCH=master
     include:
-        - php: 7.1
+        - php: 5.6
           env: DB=sqlite
-        - php: 7.1
+        - php: 5.6
           env: DB=mysql
-        - php: 7.1
-          env: DB=pgsql
-        - php: 7.1
+        - php: 5.6
           env: DB=pgsql CORE_BRANCH=master
     fast_finish: true
 
@@ -25,14 +26,15 @@ before_install:
     # enable a display for running JavaScript tests
     - export DISPLAY=:99.0
     - sh -e /etc/init.d/xvfb start
-    - nvm install 8
+    - if [[ "$DB" == 'mysql' ]]; then sudo apt-get -y install mariadb-server; fi
+    - nvm install 6
     - npm install -g npm@latest
     - make
     - make appstore
     # install core
     - cd ../
     - git clone https://github.com/nextcloud/server.git --recursive --depth 1 -b $CORE_BRANCH nextcloud
-    - mv cookbook nextcloud/apps/cookbook
+    - mv cookbook nextcloud/apps/
 
 before_script:
     - if [[ "$DB" == 'pgsql' ]]; then createuser -U travis -s oc_autotest; fi
@@ -53,9 +55,4 @@ after_failure:
     - cat ../../data/nextcloud.log
 
 addons:
-    firefox: 'latest'
-    mariadb: '10.1'
-
-services:
-  - postgresql
-  - mariadb
+    firefox: "latest"
