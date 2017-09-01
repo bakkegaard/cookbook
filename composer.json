@@ -1,0 +1,15 @@
+{
+    "name": "Cookbook",
+    "description": "Cookbook for all your recipes",
+    "type": "project",
+    "license": "AGPL",
+    "authors": [
+        {
+            "name": "Nick Bakkegaard"
+        }
+    ],
+    "require": {},
+    "require-dev": {
+        "phpunit/phpunit": "^5.4"
+    }
+}
